@@ -1,6 +1,13 @@
 import { create } from "zustand";
 
-const useImages = create(set => ({
+interface ImageState {
+	images: string[],
+	error: string,
+	loading: boolean 
+	generateImages: () => void
+}
+
+const useImages = create<ImageState>(set => ({
   images: [],
   error: "",
   loading: false,
